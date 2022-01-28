@@ -1,0 +1,97 @@
+{
+    "name": "XOMETRY_BI.ERP.ORDERS",
+    "children": [
+        {
+            "name": "XOMETRY_MODELS.ORDERS",
+            "children": [
+                {
+                    "name": "LOOKML_ERP.orders",
+                    "children": [
+                        {
+                            "name": "EXPLORE.OUTSOURCED_JOBS",
+                            "children": [
+                                {
+                                    "name": "JOBS_DASHBOARD"
+                                },
+                                {
+                                    "name": "DASHBOARD_1"
+                                },
+                                {
+                                    "name": "DASHBOARD_2"
+                                },
+                                {
+                                    "name": "DASHBOARD_3"
+                                },
+                                {
+                                    "name": "DASHBOARD_4"
+                                },
+                                {
+                                    "name": "DASHBOARD_5"
+                                },
+                                {
+                                    "name": "DASHBOARD_6"
+                                },
+                                {
+                                    "name": "DASHBOARD_7"
+                                },
+                                {
+                                    "name": "DASHBOARD_8"
+                                },
+                                {
+                                    "name": "DASHBOARD_9"
+                                },
+                                {
+                                    "name": "DASHBOARD_10"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "EXPLORE.PARTNER_DETAILS",
+                            "children": [
+                                {
+                                    "name": "PARTNER_DETAILS_DASHBOARD"
+                                },
+                                {
+                                    "name": "DASHBOARD_1"
+                                },
+                                {
+                                    "name": "DASHBOARD_2"
+                                },
+                                {
+                                    "name": "DASHBOARD_3"
+                                },
+                                {
+                                    "name": "DASHBOARD_4"
+                                },
+                                {
+                                    "name": "DASHBOARD_5"
+                                },
+                                {
+                                    "name": "DASHBOARD_6"
+                                },
+                                {
+                                    "name": "DASHBOARD_7"
+                                },
+                                {
+                                    "name": "DASHBOARD_8"
+                                },
+                                {
+                                    "name": "DASHBOARD_9"
+                                },
+                                {
+                                    "name": "DASHBOARD_10"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "EXPLORE.QUOTES_AND_ORDERS"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "XOMETRY_BI.BI.D_ORDERS"
+        }
+    ]
+}

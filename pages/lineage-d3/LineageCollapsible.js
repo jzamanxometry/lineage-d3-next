@@ -2,32 +2,11 @@ import React from "react";
 import * as d3 from "d3";
 
 
-
-var treeData =
-{
-    "name": "Top Level",
-    "children": [
-        {
-            "name": "Level 2: A",
-            "children": [
-                { "name": "Son of A" },
-                {
-                    "name": "Daughter of A",
-                    children: [
-                        { name: "Random child" }
-                    ]
-                }
-            ]
-        },
-        { "name": "Level 2: B" }
-    ]
-};
-
 const LineageCollapsible = ({ data, dimensions }) => {
     const svgRef = React.useRef(null);
-    var margin = { top: 20, right: 90, bottom: 30, left: 90 },
-        svgWidth = 960 - margin.left - margin.right,
-        svgHeight = 500 - margin.top - margin.bottom;
+    var margin = { top: 20, right: 90, bottom: 30, left: 120 },
+        svgWidth = 1060 - margin.left - margin.right,
+        svgHeight = 600 - margin.top - margin.bottom;
     React.useEffect(() => {
 
         const svgEl = d3.select(svgRef.current);
@@ -41,9 +20,9 @@ const LineageCollapsible = ({ data, dimensions }) => {
             duration = 750,
             root;
 
-        root = d3.hierarchy(treeData, function (d) { return d.children; });
+        root = d3.hierarchy(data, function (d) { return d.children; });
         root.x0 = svgHeight / 2;
-        root.y0 = 0;
+        root.y0 = 100;
 
         // Collapse after the second level
         root.children.forEach(collapse);
@@ -65,7 +44,7 @@ const LineageCollapsible = ({ data, dimensions }) => {
                 links = treeData.descendants().slice(1);
 
             // Normalize for fixed-depth.
-            nodes.forEach(function (d) { d.y = d.depth * 180 });
+            nodes.forEach(function (d) { d.y = d.depth ? (d.depth * 180) + 180 : 200 });
 
             // ****************** Nodes section ***************************
 
@@ -77,7 +56,8 @@ const LineageCollapsible = ({ data, dimensions }) => {
             var nodeEnter = node.enter().append('g')
                 .attr('class', 'node')
                 .attr("transform", function (d) {
-                    return "translate(" + source.y0 + "," + source.x0 + ")";
+                    console.log({source})
+                    return "translate(" + source.x0 + "," + source.y0 + ")";
                 })
                 .on('click', click);
 
@@ -145,7 +125,7 @@ const LineageCollapsible = ({ data, dimensions }) => {
             var linkEnter = link.enter().insert('path', "g")
                 .attr("class", "link")
                 .attr("stroke", "#ccc")
-                .attr("stroke-width", "2px")
+                .attr("stroke-width", "1px")
                 .attr("fill", "none")
                 .attr('d', function (d) {
                     var o = { x: source.x0, y: source.y0 }

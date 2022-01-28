@@ -1,6 +1,7 @@
 import React from "react";
 import Head from 'next/head'
 
+import treeData from "./selectstar-lineage.json";
 import LineageCollapsible from "./LineageCollapsible"
 import styles from '../../styles/LineageD3.module.css'
 
@@ -22,7 +23,7 @@ export default function LineageD3() {
 
                     
                     
-                    <LineageCollapsible />
+                    <LineageCollapsible data={treeData} />
                 </div>
 
 
