@@ -25,9 +25,6 @@ export const getWordOfDay = () => {
     solutionIndex: index,
     tomorrow: nextday,
   }
-
-  console.log({word, index})
-
   return word;
 }
 
